@@ -85,6 +85,37 @@ if(!isset($_SESSION['access_token'])){
           echo '<div align="center">'.$login_button . '</div>';
         }
         ?>
+         <br>
+         <?php
+	if($facebook_login_url == '' OR $login_button == ''){
+	 switch ($load) {
+	 	case 'list':
+			require_once('list.php');
+			break;
+		case 'detail':
+			 require_once('detail.php');
+			break;
+		case 'categories':
+			require_once('categories.php');
+			break;
+        	case 'add':
+        		require_once('add.php');
+        		break;
+        	case 'update':
+            		require_once('update.php');
+			break;
+		case 'home':
+			require_once('home.php');
+			break;		
+		default:
+			require_once('home.php');
+			break;
+		}
+	}else{
+	  echo '<br><div align="center"><h1>Login using your</h1>'.$facebook_login_url. '<br> or <br></div>';
+	  echo '<br><div align="center">'.$login_button . '</div>';
+	}
+	?>
         </div>
 </html>
 
