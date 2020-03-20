@@ -2,6 +2,8 @@
 $navigation = (isset($_GET['navigation']) && $_GET['navigation'] != '') ? $_GET['navigation']: '';
 
 include('config.php');
+ if($login_button == true){
+    include('facebook_login_confirm.php');
 
 $login_button = '';
 
