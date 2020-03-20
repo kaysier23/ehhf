@@ -85,35 +85,6 @@ if(!isset($_SESSION['access_token'])){
           echo '<div align="center">'.$login_button . '</div>';
         }
         ?>
-         <br>
-                <br>
-        <?php //facebook
-            if(isset($facebook_login_url)){
-            echo '<div align="center">' .$facebook_login_url. '</div>';
-            }else{
-              switch($navigation){
-                case 'product':
-                  require_once 'product.php';
-                  break;
-                case 'categories':
-                  require_once 'categories.php';
-                  break;
-                case 'create':
-                  require_once 'form_create.php';
-                  break;
-                case 'details':
-                  require_once 'product-details.php';
-                  break;
-                case 'update':
-                  require_once 'form_update.php';
-                  break;
-                default:
-                  require_once 'home.php';
-                  break;
-              }
-            }
-          
-        ?>
         </div>
 </html>
 
